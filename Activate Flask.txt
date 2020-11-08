@@ -1,0 +1,115 @@
+
+
+
+
+Activating a virtual environment
+Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific python and pip executables into your shell’s PATH.
+
+On macOS and Linux:
+
+source env/bin/activate
+On Windows:
+
+.\env\Scripts\activate
+You can confirm you’re in the virtual environment by checking the location of your Python interpreter, it should point to the env directory.
+
+On macOS and Linux:
+
+which python
+.../env/bin/python
+On Windows:
+
+where python
+.../env/bin/python.exe
+As long as your virtual environment is activated pip will install packages into that specific environment and you’ll be able to import and use packages in your Python application.
+
+
+***************
+py -m venv env
+.\env\Scripts\activate
+
+
+Install FLASK :
+***************
+ pip install flask
+ 
+ pip install flask_sqlalchemy
+ 
+ pip install flask_httpauth
+
+
+ 
+Install mysql:
+*************** 
+
+create database flask;
+
+use flask;
+
+create table applicants
+     (
+     id int primary key auto_increment,
+     fname varchar(50) not null,
+     gender varchar(50) not null,
+     city varchar(50) not null
+     );
+
+
+
+ mysql> use flask;
+Database changed
+mysql> create table applicants
+    -> (
+    -> id int primary key auto_increment,
+    -> fname varchar(50) not null,
+    -> gender varchar(50) not null,
+    -> city varchar(50) not null
+    -> );
+Query OK, 0 rows affected (3.22 sec)
+Unread Messages
+
+ pip install pymysql
+
+
+**
+create table users(
+    id int primary key auto_increment,
+    username varchar(50) not null,
+    password varchar(50) not null,
+    email varchar(50) not null,
+    role varchar(50) not null
+    );
+ 
+ ***************************************
+ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';
+ ***************************************
+ 
+ Anchor REST 
+ 
+ 
+ ****************************06-11-2020************************
+py -m venv env
+
+.\env\Scripts\activate
+
+pip install django
+
+django-admin 
+ 
+-- To create site. 
+django-admin startproject mysite
+
+-- To run the server
+py manage.py runserver
+
+py manage.py startapp applicants
+
+pip install mysqlclient
+
+--To migrate sql database to mysql
+py manage.py migrate
+ 
+py manage.py createsuperuser
+ 
+py manage.py makemigrations
+py manage.py migrate
